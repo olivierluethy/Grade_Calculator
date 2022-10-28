@@ -1,0 +1,30 @@
+body {
+  padding: 0;
+  margin: 0;
+  background-color: lightblue;
+}
+body .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+body .row .grid-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  padding: 10px;
+}
+body .row .grid-container > div {
+  text-align: center;
+  font-size: 30px;
+  height: 5vh;
+  width: 5%;
+}
+body .row button {
+  height: 60px;
+  width: 60px;
+  background-color: #3399FF;
+  border-radius: 50%;
+  font-size: 2rem;
+  display: inline-block;
+}/*# sourceMappingURL=style.css.map */
