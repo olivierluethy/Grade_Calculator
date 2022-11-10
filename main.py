@@ -22,9 +22,10 @@ while i != amount:
 
 wishedAverage = float(input("Please enter wished average:\t\t"))
 
+#Formula
 magicMark = (amount + 1) * wishedAverage - totalMarks
 
 if magicMark > 6:
     print("The wished mark isn't possible")
 else:
-    print("You need the mark of ", round(magicMark, 3), " to get the average of ", wishedAverage)
+    print(f"You need the mark of {magicMark:.2f} to get the average of ", wishedAverage)
