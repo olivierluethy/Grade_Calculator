@@ -10,11 +10,11 @@ document.querySelector("button").addEventListener("click", function(){
     listCounter++;
 })
 
-document.getElementById("mark").addEventListener("keypress", function(e){
-    if (e.key === 'Enter') {
+document.getElementById("mark").addEventListener("keypress", function(event){
+    if (event.key === "Enter") {
         var p = document.createElement("p");
         inputtext = document.querySelector(".grid-container div input").value;
         p.setAttribute("value", inputtext);
-        document.querySelector(".grid-container div:nth-child(" + listCounter + ")").appendChild("p");
+        document.querySelector(".grid-container div:nth-child(" + listCounter + ")").appendChild(p);
     }
 })
