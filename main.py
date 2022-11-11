@@ -14,30 +14,41 @@ def typeMark():
         # Falls Zahl oder Kommazahl
         try:
             checkMark = float(checkMark)
-            totalMarks += checkMark
-            i += 1
+            if checkMark > 6:
+                print("Mark isn't valid.")
+            else:
+                totalMarks += checkMark
+                i += 1
         # Falls Buchstabe
         except:
             getMagicMark(i, totalMarks)
         
 # Calculate mark for needed average
 def getMagicMark(i, totalMarks):
-    wishedAverage = float(input("Please enter wished average:\t\t"))
+    while True:
+        wishedAverage = input("Please enter wished average:\t\t")
+        # Falls Zahl oder Kommazahl
+        try:
+            wishedAverage = float(wishedAverage)
+            if wishedAverage > 6:
+                print("Mark isn't valid.")
+            else:
+                #Formula
+                magicMark = (i + 1) * wishedAverage - totalMarks
 
-    print("amount ", i, " total ", totalMarks)
-    #Formula
-    magicMark = (i + 1) * wishedAverage - totalMarks
+                if magicMark > 6:
+                    print("The wished mark isn't possible")
+                else:
+                    print(f"You need the mark of {magicMark:.2f} to get the average of {wishedAverage:.2f}\n")
 
-    if magicMark > 6:
-        print("The wished mark isn't possible")
-    else:
-        print(f"You need the mark of {magicMark:.2f} to get the average of {wishedAverage:.2f}\n")
-
-    wantContinue = input("Do you want to calculate new (Y for Yes, N for No)?\t\t")
-    if wantContinue == "Y":
-        typeMark()
-    elif wantContinue == "N":
-        exit()
+                wantContinue = input("Do you want to calculate new (Y for Yes, N for No)?\t\t")
+                if wantContinue == "Y":
+                    typeMark()
+                elif wantContinue == "N":
+                    quit()
+        # Falls Buchstabe
+        except:
+            print("")
 
 # Main
 print("Welcome To BiteX")
